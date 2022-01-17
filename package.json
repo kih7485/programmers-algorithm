@@ -1,0 +1,19 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2016년.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kih7485/programmers-algorithm.git"
+  },
+  "author": "kih",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kih7485/programmers-algorithm/issues"
+  },
+  "homepage": "https://github.com/kih7485/programmers-algorithm#readme"
+}
