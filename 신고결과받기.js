@@ -7,10 +7,8 @@ function solution(id_list, report, k) {
       isStoppedId: false,
     });
   });
-  console.log(reportObj, "reportObj");
   const report_list = report.map((user) => {
     const [username, reportedUserName] = user.split(" ");
-    console.log(reportedUserName, "reportedUserName");
     if (reportObj[username].report.indexOf(reportedUserName) === -1) {
       reportObj[username].report.push(reportedUserName);
       reportObj[reportedUserName].reported += 1;
@@ -19,7 +17,6 @@ function solution(id_list, report, k) {
         reportObj[reportedUserName].isStoppedId = true;
       }
     }
-    console.log(reportObj);
     return reportObj[reportedUserName].reported;
   });
   let cntOfSendMail = id_list.map((val) => {
@@ -27,9 +24,7 @@ function solution(id_list, report, k) {
       (reportId) => reportObj[reportId].isStoppedId
     ).length;
   });
-  console.log(report_list);
-  let answer = "";
-  //   return report_list.map(list);
+  return cntOfSendMail;
 }
 
 solution(
@@ -37,6 +32,33 @@ solution(
   ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"],
   2
 );
+
+/**다른사람의 풀이 */
+function solution2(id_list, report, k) {
+  let reports = [...new Set(report)].map((a) => {
+    return a.split(" ");
+  });
+  console.log(reports, "reports");
+  let counts = new Map();
+  for (const bad of reports) {
+    counts.set(bad[1], counts.get(bad[1]) + 1 || 1);
+  }
+  let good = new Map();
+  for (const report of reports) {
+    if (counts.get(report[1]) >= k) {
+      good.set(report[0], good.get(report[0]) + 1 || 1);
+    }
+  }
+  let answer = id_list.map((a) => good.get(a) || 0);
+  return answer;
+}
+
+solution2(
+  ["muzi", "frodo", "apeach", "neo"],
+  ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"],
+  2
+);
+
 // 신입사원 무지는 게시판 불량 이용자를 신고하고 처리 결과를 메일로 발송하는 시스템을 개발하려 합니다. 무지가 개발하려는 시스템은 다음과 같습니다.
 
 // 각 유저는 한 번에 한 명의 유저를 신고할 수 있습니다.
