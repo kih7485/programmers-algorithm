@@ -9,21 +9,10 @@ function solution(left, right) {
     } else {
       answer -= num;
     }
-    //console.log(divideNum);
-    //arr.push(divideNum);
-    // for (let j = 0; j < divideNum.length; j++) {
-    //   console.log(divideNum[j]);
-    // }
-    // arr.push(left + i);
   }
 
   console.log(answer);
-  //   console.log(
-  //     arr.reduce((prev, curr) => {
-  //       return prev % 2 === 0 ? prev + curr : prev - curr;
-  //       //console.log(prev);
-  //     }, 0)
-  //   );
+
   return answer;
 }
 
