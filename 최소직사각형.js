@@ -9,7 +9,7 @@ function solution(sizes) {
       a = num[0];
     }
     if (b < num[1]) {
-      a = num[1];
+      b = num[1];
     }
     console.log(num, "num");
   }
