@@ -16,9 +16,9 @@ function solution(s) {
   return s
     .split(" ")
     .map((word) => {
-      const firstChar = word.charAt(0);
+      const firstChar = word.charAt(0).toUpperCase();
       const others = word.slice(1).toLowerCase();
-      return firstChar.toUpperCase() + others;
+      return firstChar + others;
     })
     .join(" ");
 }
