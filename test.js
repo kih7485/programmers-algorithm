@@ -1,11 +1,13 @@
-function solution(n, a, b) {
-  let answer = 0;
-  while (a !== b) {
-    a = Math.ceil(a / 2);
-    b = Math.ceil(b / 2);
-    answer++;
+function solution(n) {
+  const result = [];
+  if (n === 1 || n === 0) {
+    return n;
   }
-  return answer;
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      result.push(i);
+    }
+  }
+  return result.reduce((a, b) => a + b);
 }
-
-solution(8, 4, 7);
+console.log(solution(0));

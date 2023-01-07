@@ -9,7 +9,8 @@ function solution(arr) {
             return { a: sum, length: numLength };
         });
     arr2.forEach((obj, i)) => {
-        
+        if (arr2[i] > arr2[i + 1]) a = arr2[i];
+        if ()
     });
 }
 
